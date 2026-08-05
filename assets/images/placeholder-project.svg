@@ -1,0 +1,43 @@
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder project image">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#DFE4E2" stroke-width="1"/>
+    </pattern>
+    <mask id="fade">
+      <rect width="640" height="400" fill="white"/>
+      <rect width="640" height="400" fill="url(#fadegrad)"/>
+    </mask>
+    <radialGradient id="fadegrad" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="400" fill="#F7F8F7"/>
+  <rect width="640" height="400" fill="url(#dots)" mask="url(#fade)"/>
+
+  <!-- corner brackets -->
+  <g stroke="#0E7C4A" stroke-width="2" fill="none">
+    <path d="M 24 44 L 24 24 L 44 24"/>
+    <path d="M 616 24 L 596 24 L 596 44" transform="translate(0,0)"/>
+    <path d="M 596 24 L 616 24 L 616 44"/>
+    <path d="M 24 356 L 24 376 L 44 376"/>
+    <path d="M 616 376 L 596 376 L 596 356"/>
+  </g>
+
+  <!-- simple folder / window glyph -->
+  <g transform="translate(270,150)">
+    <rect x="0" y="0" width="100" height="76" rx="6" fill="#FFFFFF" stroke="#C6CDCA" stroke-width="1.5"/>
+    <rect x="0" y="0" width="100" height="18" rx="6" fill="#E7F3EC"/>
+    <circle cx="10" cy="9" r="2.4" fill="#0E7C4A"/>
+    <circle cx="18" cy="9" r="2.4" fill="#C6CDCA"/>
+    <circle cx="26" cy="9" r="2.4" fill="#C6CDCA"/>
+    <line x1="14" y1="34" x2="86" y2="34" stroke="#DFE4E2" stroke-width="2"/>
+    <line x1="14" y1="46" x2="70" y2="46" stroke="#DFE4E2" stroke-width="2"/>
+    <line x1="14" y1="58" x2="78" y2="58" stroke="#DFE4E2" stroke-width="2"/>
+  </g>
+
+  <text x="320" y="270" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#8A9490" letter-spacing="0.5">
+    $ add ./assets/images/your-project.png
+  </text>
+</svg>
