@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Your Name</title>
+<meta name="description" content="Journal entries and reflections from my academic and professional journey.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="icon" href="assets/images/icon_portfolio.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/images/icon_portfolio.svg" alt="logo" class="nav__brand-icon">
+      <span class="nav__prompt">guest@portfolio</span><span class="nav__tilde">:~$</span>
+      <span class="nav__cursor" aria-hidden="true"></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html" class="nav__link">./about</a>
+      <a href="blog.html" class="nav__link is-active">./blog</a>
+      <a href="projects.html" class="nav__link">./projects</a>
+      <a href="certifications.html" class="nav__link">./certifications</a>
+      <a href="experience.html" class="nav__link">./experience</a>
+    </nav>
+
+    <a href="assets/docs/Andrada_ DataResume.pdf" class="nav__resume" download>
+      <span>Download résumé</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="view" data-view="blog">
+    <p class="eyebrow" style="margin-top:56px;">$ ls ./blog --sort=date</p>
+    <h2 class="section__title">Blog</h2>
+    <p class="section__desc">
+      A place for longer reflections, milestone updates, and story-driven posts with images and captions.
+    </p>
+
+    <div class="blog-grid" id="blogList"><!-- injected by js/main.js --></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Your Name. Built with intention, not a template you can spot from a mile away.</p>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" data-close-modal aria-label="Close">✕</button>
+    <div class="modal__content" id="modalContent"><!-- injected --></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

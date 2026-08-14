@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="icon" href="assets/images/icon_portfolio.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -18,18 +20,20 @@
 <header class="nav">
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
-      <span class="nav__prompt">guest@portfolio</span><span class="nav__tilde">:~$</span>
+      <img src="assets/images/icon_portfolio.svg" alt="logo" class="nav__brand-icon">
+      <span class="nav__prompt">Andrada@portfolio</span><span class="nav__tilde">:~$</span>
       <span class="nav__cursor" aria-hidden="true"></span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html" class="nav__link is-active">./about</a>
+      <a href="blog.html" class="nav__link">./blog</a>
       <a href="projects.html" class="nav__link">./projects</a>
       <a href="certifications.html" class="nav__link">./certifications</a>
       <a href="experience.html" class="nav__link">./experience</a>
     </nav>
 
-    <a href="assets/docs/resume.pdf" class="nav__resume" download>
+    <a href="assets/docs/Andrada_ DataResume.pdf" class="nav__resume" download>
       <span>Download résumé</span>
     </a>
 
@@ -45,11 +49,12 @@
 
     <div class="hero">
       <div class="hero__grid" aria-hidden="true"></div>
+      <img class="hero__photo" src="assets/images/andrada_profile.jpeg" alt="Joshua Andrada portrait" loading="lazy">
       <p class="eyebrow">$ whoami</p>
       <h1 class="hero__title">
         <span>Joshua Andrada</span><span class="cursor-blink" aria-hidden="true"></span>
       </h1>
-      <p class="hero__role">Data Analyst &nbsp;<span class="dot-sep">·</span>&nbsp; IT &amp; Cybersecurity Graduate</p>
+      <p class="hero__role">Data Analyst &nbsp;<span class="dot-sep">·</span>&nbsp; IT Graduate</p>
       <p class="hero__bio">
         I turn raw data into decisions — with an analyst's eye for patterns and a
         security graduate's instinct for what can go wrong. Recently graduated,
@@ -62,9 +67,8 @@
       </div>
 
       <ul class="hero__links">
-        <li><a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">$ open linkedin</a></li>
-        <li><a href="https://github.com/yourname" target="_blank" rel="noopener">$ open github</a></li>
-        <li><a href="mailto:your.email@example.com">$ mail --compose</a></li>
+        <li><a href="https://www.linkedin.com/in/joshua-andrada-1704313aa/" target="_blank" rel="noopener">$ open linkedin</a></li>
+        <li><a href="https://github.com/al-tru-ism" target="_blank" rel="noopener">$ open github</a></li>
       </ul>
     </div>
 
@@ -73,14 +77,18 @@
       <h2 class="section__title">A little more about me</h2>
       <div class="about__body">
         <p>
-          Replace this paragraph with your own story: your degree, your specialization,
-          and what pulled you toward data. Mention the intersection you bring — e.g.
-          "As an IT graduate specializing in Cybersecurity, I care about data integrity
-          and security as much as the insight itself."
-        </p>
+          I’ve always been drawn to the stories hidden inside noisy datasets. 
+          Whether it was cleaning hundreds of thousands of messy environmental 
+          sensor logs during my internship or building computer vision models to 
+          track urban foot traffic, I learned early on that the best analytical 
+          work starts with trusted ground truth. My background in IT and security 
+          gives me a healthy obsession with data validation, privacy, and making 
+          sure the underlying pipeline is airtight before drawing any conclusions.        </p>
         <p>
-          Add a second paragraph about what you're looking for next — the kind of role,
-          industry, or team you want to join.
+          I’m currently looking for my first full-time role as a Data 
+          Analyst. I want to join a team where I can dig into raw databases, 
+          build clean dashboards, and help translate complex operational 
+          data into straightforward answers that drive better decisions.
         </p>
       </div>
 
@@ -90,38 +98,33 @@
           <div class="skills__group">
             <h3>Data</h3>
             <ul class="tag-list">
-              <li>SQL</li><li>Python</li><li>Excel</li><li>Weka</li><li>RapidMiner</li><li>Power BI</li><li>Tableau</li><li>Pandas</li>
+              <li><span class="skill-item"><i class="devicon-mysql-plain colored"></i> SQL</span></li>
+              <li><span class="skill-item"><i class="devicon-python-plain colored"></i> Python</span></li>
+              <li><span class="skill-item">Weka</span></li>
+              <li><span class="skill-item">RapidMiner</span></li>
+              <li><span class="skill-item"><i class="devicon-pandas-plain colored"></i> Pandas</span></li>
             </ul>
           </div>
           <div class="skills__group">
             <h3>Security</h3>
             <ul class="tag-list">
-              <li>Risk Assessment</li><li>Network Security</li><li>Data Privacy</li>
+              <li>Data Integrity</li><li>Network Availability</li><li>Data Privacy</li>
             </ul>
           </div>
           <div class="skills__group">
             <h3>Tools</h3>
             <ul class="tag-list">
-              <li>Git</li><li>MySQL</li><li>Figma</li>
+              <li><span class="skill-item"><i class="devicon-git-plain colored"></i> Git</span></li>
+              <li><span class="skill-item"><i class="devicon-mysql-plain colored"></i> MySQL</span></li>
+              <li><span class="skill-item">Excel</span></li>
+              <li><span class="skill-item"><i class="devicon-powerbi-plain colored"></i> Power BI</span></li>
+              <li><span class="skill-item"><i class="devicon-figma-plain colored"></i> Figma</span></li>
+              <li><span class="skill-item"><i class="devicon-vscode-plain colored"></i> VS Code</span></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- ===== BLOG-STYLE JOURNAL ===== -->
-    <div class="section">
-      <p class="eyebrow">$ ls ./journal --sort=date</p>
-      <h2 class="section__title">Journal</h2>
-      <p class="section__desc">
-        A running log of competitions, OJT/internship milestones, and things I learned along
-        the way in college. Click an entry to read the full write-up.
-      </p>
-
-      <div class="journal" id="journalList"><!-- injected by js/main.js --></div>
-    </div>
-  </div>
-</main>
 
 <footer class="footer">
   <p>© <span id="year"></span> Your Name. Built with intention, not a template you can spot from a mile away.</p>

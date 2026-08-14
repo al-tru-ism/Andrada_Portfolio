@@ -9,32 +9,41 @@ const PROJECTS = [
     id: "p1",
     title: "FootTech: A Computer Vision-Based Foot Traffic Analytics for Real-Time Resource Optimization in Manila City using YOLOv10",
     status: "done", // "done" | "progress"
-    image: "assets/images/placeholder-project.svg",
-    summary: "An interactive dashboard analyzing regional sales trends and identifying underperforming product lines.",
-    tags: ["SQL", "Power BI", "DAX"],
-    problem: "Replace with the real problem: what question was the business trying to answer, and why did it matter?",
-    approach: [
-      "Step 1 — how you got and cleaned the data.",
-      "Step 2 — the analysis or modeling you did.",
-      "Step 3 — how you turned it into something decision-makers could use."
+    video: "assets/images/capstone demo.mp4",
+    image: "assets/images/dashboard1.png",
+    images: [
+      { src: "assets/images/dashboard1.png", alt: "Dashboard overview", caption: "Overview of the dashboard used in the project." },
+      { src: "assets/images/dashboard2.png", alt: "Dashboard filters", caption: "Detail view of filters and metrics." }
     ],
-    outcome: "Replace with the result — a metric, a decision it informed, or what you'd do differently next time.",
+    summary: "An interactive dashboard summarizing foot-traffic patterns and peak load times.",
+    tags: ["SQL", "Power BI", "DAX"],
+    problem: "Make foot-traffic data actionable for venue resource planning: when and where to allocate staff and resources.",
+    approach: [
+      "Ingested and cleaned sensor and camera-derived counts using a reproducible ETL pipeline.",
+      "Built aggregation layer and measures in Power BI; used DAX for time-windowed metrics.",
+      "Packaged actionable dashboards with filters and alerts for operational teams."
+    ],
+    outcome: "Reduced manual monitoring effort; dashboard used in demos to inform staffing decisions during events.",
     link: "https://github.com/yourname/sales-dashboard"
   },
   {
     id: "p2",
     title: "WATCH: An AI-Driven Multimodal Acoustic-Vision Sensing Framework for Hyper-Local Extreme Rainfall Classification and Early Warning",
     status: "done",
-    image: "assets/images/placeholder-project.svg",
-    summary: "A machine learning classifier that flags anomalous network traffic, built for a cybersecurity coursework project.",
-    tags: ["Python", "Scikit-learn", "Wireshark"],
-    problem: "Replace with the real problem statement — what kind of traffic/attack you were trying to detect.",
-    approach: [
-      "Dataset and features used.",
-      "Model(s) tried and why you picked the final one.",
-      "How you evaluated it (precision/recall, confusion matrix, etc.)."
+    image: "assets/images/watch1.png",
+    images: [
+      { src: "assets/images/watch1.png", alt: "Prototype setup", caption: "Prototype used for data collection and demo." },
+      { src: "assets/images/watch2.png", alt: "Prototype screenshot", caption: "Prototype UI and results." }
     ],
-    outcome: "Replace with results — accuracy achieved, what you learned about the trade-off between false positives and false negatives.",
+    summary: "A multimodal sensing prototype combining acoustic and vision inputs to detect extreme rainfall events.",
+    tags: ["Python", "Scikit-learn", "Sensors"],
+    problem: "Provide localized early-warning signals for extreme rainfall using low-cost sensors.",
+    approach: [
+      "Collected synchronized acoustic and camera data; engineered time-window features.",
+      "Trained and evaluated several classifiers; selected model balancing recall and latency.",
+      "Validated in field demos and iterated on sensor thresholds."
+    ],
+    outcome: "Prototype achieved useful early warnings in pilot tests; informed next steps for deployment.",
     link: "https://github.com/yourname/nid-classifier"
   },
   {
@@ -42,15 +51,16 @@ const PROJECTS = [
     title: "AI-Enhanced Circular Sanitation: A Smart Nature-Based System for Transforming Septic Effluent into High-Value Ornamental Aquaponics",
     status: "progress",
     image: "assets/images/placeholder-project.svg",
-    summary: "A model to predict which customers are at risk of churning, using historical usage and support-ticket data.",
+    images: [ { src: "assets/images/placeholder-project.svg", alt: "placeholder", caption: "Placeholder image — replace with project photos." } ],
+    summary: "Work-in-progress on integrating biological treatment with monitoring and control.",
     tags: ["Python", "Pandas", "Scikit-learn"],
-    problem: "Replace with the business context — why churn prediction mattered for this dataset/company.",
+    problem: "Design a closed-loop system to recover resources from septic effluent while ensuring safety.",
     approach: [
-      "Exploratory data analysis and feature engineering.",
-      "Model selection and validation strategy.",
-      "Current status / what's left to finish."
+      "Design sensors and monitoring pipeline; prototype control logic.",
+      "Collect pilot data and plan model experiments.",
+      "Implement safety checks and documentation for deployment."
     ],
-    outcome: "Replace once finished — for now, describe what's in progress and your target completion date.",
+    outcome: "Ongoing — prototype stage with data collection and initial results planned for next semester.",
     link: "https://github.com/yourname/churn-prediction"
   },
   {
@@ -60,13 +70,13 @@ const PROJECTS = [
     image: "assets/images/placeholder-project.svg",
     summary: "A review of a partner company's data-handling practices during OJT, mapping gaps against basic data-privacy principles.",
     tags: ["Data Privacy", "Risk Assessment", "Documentation"],
-    problem: "Replace with the real scope — what system or process you audited and why.",
+    problem: "Audit a partner system's data handling and align practices with baseline privacy controls.",
     approach: [
-      "How you gathered information (interviews, system review, documentation).",
-      "Framework or checklist you used to assess gaps.",
-      "How findings were presented to the team/supervisor."
+      "Interviews, system review, and documentation analysis.",
+      "Mapped findings to a simple control checklist and prioritized recommendations.",
+      "Compiled a report and presented actionable steps to the supervisor."
     ],
-    outcome: "Replace with the outcome — recommendations made, and whether/how they were adopted.",
+    outcome: "Recommendations documented; some process changes adopted by the partner during handover.",
     link: ""
   }
 ];
@@ -77,8 +87,7 @@ const CERTIFICATIONS = [
     title: "Oracle Cloud Infrastructure 2025 Multicloud Architecture Professional",
     issuer: "Oracle",
     date: "Sep 2025",
-    credentialId: "REPLACE-ID",
-    description: "Replace with a short note on what the certificate covered and what you took away from it.",
+    description: "Demonstrates advanced skills in designing, integrating, and managing multicloud solutions across Oracle and third-party cloud environments.",
     link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=2EDC6BCA356C877510F9CC4ABE24EE0B1EF409EDE43A661B97ED31136CC0D8BB"
   },
   {
@@ -86,45 +95,36 @@ const CERTIFICATIONS = [
     title: "Oracle Cloud Infrastructure 2025 Foundations Associate",
     issuer: "Oracle",
     date: "Sep 2025",
-    credentialId: "REPLACE-ID",
-    description: "Replace with details — this is where your cybersecurity specialization shows up for recruiters.",
+    description: "Validates fundamental knowledge of Oracle Cloud Infrastructure services, architecture, and core cloud concepts.",
     link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=252B58F537FA89A9CFBE6257FC80CA61D0E0436115A11F856822A42736402C5F"
   },
   {
     id: "c3",
     title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
     issuer: "Oracle",
-    date: "2024",
-    credentialId: "",
-    description: "Replace with what the challenge was, your team's approach, and why you won.",
+    date: "October 2025",
+    description: "Recognition of foundational AI and cloud skills, including AI concepts, services, and responsible AI principles within Oracle Cloud.",
     link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=83A1D4D0A659DBDE2B4A92DC441E44B7286B1AFAFCFB15A08C6B13B0D3FE2495"
   },
   {
     id: "c4",
     title: "Dean's Lister Award",
     issuer: "Technological Institute of the Philippines",
-    date: "2024",
-    credentialId: "REPLACE-ID",
-    description: "Replace with a short note on scope/level of the course.",
-    link: "",
+    date: "October 30, 2025",
     link: "https://app.diplomasafe.com/en-US/certificates/de35bb7097983a22d718295e85bd1b96386110d28"
   },
   {
     id: "c5",
     title: "Dean's Lister Award",
     issuer: "Technological Institute of the Philippines",
-    date: "2023",
-    credentialId: "REPLACE-ID",
-    description: "Replace with details relevant to how it shaped your data-security mindset.",
+    date: "June 5, 2025",
     link: "https://app.diplomasafe.com/en-US/certificates/ddbe15b0089f5bd9bf22268a4dedae56f335fa803"
   },
   {
     id: "c6",
     title: "Dean's Lister Award",
     issuer: "Technological Institute of the Philippines",
-    date: "2022–2024",
-    credentialId: "",
-    description: "Replace or remove — academic honors go here too.",
+    date: "July 11, 2024",
     link: "https://app.diplomasafe.com/en-US/certificates/da611336204ba2094982e99913856ea74de352d0f"
   }
 ];
@@ -134,6 +134,7 @@ const EXPERIENCE = [
     id: "e1",
     role: "Iot Intern / Researcher (OJT)",
     org: "Ateneo Innovation Center",
+    logo: "assets/images/ateneo.png",
     period: "Jan 2026 — Apr 2026",
     points: [
       "Replace with a specific responsibility, e.g. maintained and queried internal databases.",
@@ -145,6 +146,7 @@ const EXPERIENCE = [
     id: "e2",
     role: "Customer Service Representative",
     org: "Concentrix",
+    logo: "assets/images/concentrix_logo.svg",
     period: "July 2022 — Dec 2022",
     points: [
       "Replace with what you actually did — vulnerability scanning, log review, awareness training, etc.",
@@ -153,41 +155,57 @@ const EXPERIENCE = [
   },
 ];
 
-const JOURNAL = [
+const BLOG = [
   {
     id: "j1",
-    date: "Apr 2026",
-    tag: "OJT",
-    title: "What four months in a real IT department taught me about 'clean' data",
+    date: "Nov 2025 - June 2025",
+    tag: "Capstone",
+    title: "Our 7-months long journey to build a foot-traffic analytics dashboard",
     excerpt: "Coursework never tells you how messy production data actually is. Here's what surprised me.",
+    coverImage: "assets/images/dashboard1.png",
     body: [
-      "Replace with the full story. What was the situation, what did you expect going in, and what actually happened?",
-      "Add a paragraph on a specific challenge you ran into and how you solved (or didn't solve) it.",
-      "Close with what you'd tell a underclassman about to start their own OJT."
+      "The capstone pushed me to think beyond textbook examples and into the realities of messy, incomplete data.",
+      "A lot of the challenge came from making thoughtful decisions under uncertainty, especially when stakeholders needed something useful quickly.",
+      "The biggest lesson was that the analysis matters most when it helps someone act with confidence."
+    ],
+    images: [
+      { src: "assets/images/dashboard1.png", alt: "Dashboard screenshot", caption: "The dashboard layout used to summarize movement patterns and key trends." },
+      { src: "assets/images/dashboard2.png", alt: "Dashboard detail view", caption: "A closer look at the filters and metrics used during the analysis process." }
     ]
   },
   {
     id: "j2",
-    date: "Nov 2025",
+    date: "January 2026",
     tag: "Competition",
-    title: "Placing 1st at [Hackathon Name]: our 30-hour data pipeline",
+    title: "My first hackathon: how we built a mobile-based AI-companion in 24hrs",
     excerpt: "Our team had 30 hours to turn a messy public dataset into a working dashboard. Here's how we split the work.",
+    coverImage: "assets/images/watch1.png",
     body: [
-      "Replace with the challenge brief and your team's plan of attack.",
-      "Add the specific technical decisions you made and why (tools, models, visualizations).",
-      "Close with the result and a lesson that stuck with you."
+      "The experience taught me how much clarity comes from defining a narrow problem statement early.",
+      "We focused on building something simple, useful, and explainable instead of chasing every possible feature.",
+      "What stayed with me most was how fast a small team can move when priorities are shared clearly."
+    ],
+    images: [
+      { src: "assets/images/watch1.png", alt: "Hackathon concept board", caption: "An early concept board used to align the interface and user flow." },
+      { src: "assets/images/watch2.png", alt: "Prototype screenshot", caption: "The final prototype layout after several rounds of rapid iteration." }
     ]
   },
   {
     id: "j3",
-    date: "Mar 2025",
-    tag: "Coursework",
-    title: "Building my first intrusion-detection classifier",
+    date: "January - April 2026",
+    tag: "OJT",
+    title: "My 500-hour OJT experience at Ateneo Innovation Center",
     excerpt: "My cybersecurity capstone pushed me into machine learning for the first time — awkwardly, at first.",
+    coverImage: "assets/images/placeholder-project.svg",
     body: [
-      "Replace with the assignment context and your starting point.",
-      "Add what you learned about the trade-off between precision and recall in a security context.",
-      "Close with how this project shaped your interest in data analytics."
+      "The OJT experience helped me connect academic concepts with real research and communication challenges.",
+      "I learned that good analysis is as much about context and storytelling as it is about the model or query.",
+      "That balance made me more interested in turning data into something people can actually use."
+    ],
+    images: [
+      { src: "assets/images/placeholder-project.svg", alt: "Placeholder visual", caption: "A simple visual placeholder for the write-up until a final photo is added." }
     ]
   }
 ];
+
+const JOURNAL = BLOG;
