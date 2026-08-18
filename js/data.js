@@ -11,6 +11,7 @@ const PROJECTS = [
     status: "done", // "done" | "progress"
     video: "assets/images/capstone demo.mp4",
     image: "assets/images/dashboard1.png",
+    featuredImage: "assets/images/dashboard2.png",
     images: [
       { src: "assets/images/dashboard1.png", alt: "Dashboard overview", caption: "Overview of the dashboard used in the project." },
       { src: "assets/images/dashboard2.png", alt: "Dashboard filters", caption: "Detail view of filters and metrics." }
@@ -31,6 +32,7 @@ const PROJECTS = [
     title: "WATCH: An AI-Driven Multimodal Acoustic-Vision Sensing Framework for Hyper-Local Extreme Rainfall Classification and Early Warning",
     status: "done",
     image: "assets/images/watch1.png",
+    featuredImage: "assets/images/watch2.png",
     images: [
       { src: "assets/images/watch1.png", alt: "Prototype setup", caption: "Prototype used for data collection and demo." },
       { src: "assets/images/watch2.png", alt: "Prototype screenshot", caption: "Prototype UI and results." }
@@ -137,20 +139,23 @@ const EXPERIENCE = [
     logo: "assets/images/ateneo.png",
     period: "Jan 2026 — Apr 2026",
     points: [
-      "Replace with a specific responsibility, e.g. maintained and queried internal databases.",
-      "Replace with a measurable contribution, e.g. built a report that reduced manual reconciliation time by X%.",
-      "Replace with anything security-related you touched — access reviews, data handling, etc."
+      "Processed, structured, and cleaned a complex 385,728-row dataset using automated scripts and data  validation tools, achieving complete data integrity and resolving imbalances.",
+      "Gathered, matched, and verified environmental metrics across multiple live telemetry and sensor platforms to ensure baseline accuracy for analytical models. ",
+      "Documented step-by-step verification procedures and maintained strict operational standards to prevent data loss or misreporting.",
+      "Facilitated technology transfer and community-led technical training to ensure the long-term operational  resilience of deployed systems."
     ]
   },
   {
     id: "e2",
     role: "Customer Service Representative",
     org: "Concentrix",
-    logo: "assets/images/concentrix_logo.svg",
+    logo: "assets/images/concentrix_logo.png",
     period: "July 2022 — Dec 2022",
     points: [
-      "Replace with what you actually did — vulnerability scanning, log review, awareness training, etc.",
-      "Replace with a specific outcome or finding you contributed to."
+      "Conducted high-volume account lookups, updated customer records, and cross-checked internal logs with zero error tolerance, maintaining a 92% CSAT score.",
+      "Classified and tagged high-volume qualitative call logs and feedback trends into structured categories to streamline workflow efficiency and issue resolution.",
+      "Collaborated with cross-functional teams to identify and resolve recurring customer issues, resulting in a 15% reduction in repeat inquiries.",
+      "Handled sensitive client inquiries while adhering strictly to company data privacy and security guidelines."
     ]
   },
 ];
@@ -162,7 +167,8 @@ const BLOG = [
     tag: "Capstone",
     title: "Our 7-months long journey to build a foot-traffic analytics dashboard",
     excerpt: "Coursework never tells you how messy production data actually is. Here's what surprised me.",
-    coverImage: "assets/images/dashboard1.png",
+    coverImage: "assets/images/c2 - 2.1.png",
+    featuredImage: "assets/images/dashboard1.png",
     body: [
       "The capstone pushed me to think beyond textbook examples and into the realities of messy, incomplete data.",
       "A lot of the challenge came from making thoughtful decisions under uncertainty, especially when stakeholders needed something useful quickly.",
@@ -180,6 +186,7 @@ const BLOG = [
     title: "My first hackathon: how we built a mobile-based AI-companion in 24hrs",
     excerpt: "Our team had 30 hours to turn a messy public dataset into a working dashboard. Here's how we split the work.",
     coverImage: "assets/images/watch1.png",
+    featuredImage: "assets/images/watch2.png",
     body: [
       "The experience taught me how much clarity comes from defining a narrow problem statement early.",
       "We focused on building something simple, useful, and explainable instead of chasing every possible feature.",

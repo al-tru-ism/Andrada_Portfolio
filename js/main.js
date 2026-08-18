@@ -26,15 +26,18 @@
     const entry = id ? entries.find(item => item.id === id) : null;
 
     if(entry){
+      list.classList.add("is-detail");
       const gallery = (entry.images && entry.images.length ? entry.images : [{ src: entry.coverImage || "assets/images/placeholder-project.svg", alt: entry.title || "Blog image", caption: "Placeholder image — replace this with your article artwork or a real photo." }]);
+      const featuredImage = entry.featuredImage || entry.images?.[0]?.src || entry.coverImage || "assets/images/placeholder-project.svg";
+      const galleryImages = gallery.filter(img => img.src !== featuredImage);
       list.innerHTML = `
         <article class="detail-page">
           <p class="modal__eyebrow">$ cat ./blog/${esc(entry.id)}.md</p>
           <h1 class="section__title">${esc(entry.title || "Untitled article")}</h1>
           <p class="modal__meta">${esc(entry.tag || "General")} · ${esc(entry.date || "Date TBD")}</p>
-          <img class="modal__image" src="${esc(entry.coverImage || "assets/images/placeholder-project.svg")}" alt="${esc(entry.title || "Blog image")}">
+          <img class="modal__image" src="${esc(featuredImage)}" alt="${esc(entry.title || "Blog image")}">
           <div class="modal__body">${(entry.body || ["Placeholder content. Replace this with the actual write-up for your blog post."]).map(paragraph => `<p>${esc(paragraph)}</p>`).join("")}</div>
-          ${gallery.map(img => `
+          ${galleryImages.map(img => `
             <figure class="modal__gallery-item" style="margin-top: 16px;">
               <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
               ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
@@ -73,13 +76,19 @@
     const project = id ? PROJECTS.find(p => p.id === id) : null;
 
     if(project){
+      list.classList.add("is-detail");
       const images = (project.images && project.images.length) ? project.images : [{ src: project.image || "assets/images/placeholder-project.svg", alt: project.title || "Project image", caption: "Placeholder image — replace with your own project photo or screenshot." }];
-      const media = project.video ? `<video class="modal__video" controls src="${esc(project.video)}"></video>` : images.map(img => `
-        <figure class="modal__gallery-item">
-          <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
-          ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
-        </figure>
-      `).join("");
+      const featuredImage = project.featuredImage || images[0]?.src || project.image || "assets/images/placeholder-project.svg";
+      const galleryImages = images.filter(img => img.src !== featuredImage);
+      const media = project.video ? `<video class="modal__video" controls src="${esc(project.video)}"></video>` : `
+        <img class="modal__image" src="${esc(featuredImage)}" alt="${esc(project.title || "Project image")}" loading="eager">
+        ${galleryImages.map(img => `
+          <figure class="modal__gallery-item" style="margin-top: 16px;">
+            <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
+            ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
+          </figure>
+        `).join("")}
+      `;
 
       list.innerHTML = `
         <article class="detail-page">
@@ -182,7 +191,8 @@
 
   function projectModalHTML(p){
     const images = (p.images && p.images.length) ? p.images : [{ src: p.image || "assets/images/placeholder-project.svg", alt: p.title || "Project image", caption: "Placeholder image — replace with your own project photo or screenshot." }];
-    const media = p.video ? `<video class="modal__video" controls src="${esc(p.video)}"></video>` : galleryHTML(images);
+    const featuredImage = p.featuredImage || images[0]?.src || p.image || "assets/images/placeholder-project.svg";
+    const media = p.video ? `<video class="modal__video" controls src="${esc(p.video)}"></video>` : galleryHTML(images, featuredImage);
     return `
       ${media}
       <p class="modal__eyebrow">$ cat ./projects/${esc(p.id)}.md</p>
@@ -213,11 +223,13 @@
     `;
   }
 
-  function galleryHTML(images){
+  function galleryHTML(images, featuredImage){
     if(!images || !images.length) return "";
+    const galleryItems = images.filter(img => !featuredImage || img.src !== featuredImage);
+    if(!galleryItems.length) return "";
     return `
       <div class="modal__gallery">
-        ${images.map(img => `
+        ${galleryItems.map(img => `
           <figure class="modal__gallery-item">
             <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
             ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
@@ -229,11 +241,13 @@
 
   function journalModalHTML(j){
     const images = (j.images && j.images.length) ? j.images : [{ src: j.coverImage || "assets/images/placeholder-project.svg", alt: j.title || "Blog image", caption: "Placeholder image — replace this with your article artwork or a real photo." }];
+    const featuredImage = j.featuredImage || images[0]?.src || j.coverImage || "assets/images/placeholder-project.svg";
     return `
       <p class="modal__eyebrow">$ cat ./blog/${esc(j.id)}.md</p>
       <h2 class="modal__title">${esc(j.title || "Untitled article")}</h2>
       <p class="modal__meta">${esc(j.tag || "General")} · ${esc(j.date || "Date TBD")}</p>
-      ${galleryHTML(images)}
+      <img class="modal__image" src="${esc(featuredImage)}" alt="${esc(j.title || "Blog image")}" loading="eager">
+      ${galleryHTML(images, featuredImage)}
       <div class="modal__body">${(j.body || ["Placeholder content. Replace this with the actual write-up for your blog post."]).map(p => `<p>${esc(p)}</p>`).join("")}</div>
     `;
   }
