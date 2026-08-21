@@ -31,7 +31,7 @@ const PROJECTS = [
     id: "p2",
     title: "WATCH: An AI-Driven Multimodal Acoustic-Vision Sensing Framework for Hyper-Local Extreme Rainfall Classification and Early Warning",
     status: "done",
-    image: "assets/images/watch1.png",
+    image: "assets/images/watch_cover.png",
     featuredImage: "assets/images/watch2.png",
     images: [
       { src: "assets/images/watch1.png", alt: "Prototype setup", caption: "Prototype used for data collection and demo." },
@@ -163,38 +163,36 @@ const EXPERIENCE = [
 const BLOG = [
   {
     id: "j1",
-    date: "Nov 2025 - June 2025",
+    date: "November 2025 - June 2026",
     tag: "Capstone",
-    title: "Our 7-months long journey to build a foot-traffic analytics dashboard",
-    excerpt: "Coursework never tells you how messy production data actually is. Here's what surprised me.",
+    title: "Our 7 month long journey to build a foot-traffic analytics dashboard",
+    excerpt: "From raw weather records to a working dashboard, our capstone became a lesson in data, iteration, and teamwork.",
     coverImage: "assets/images/c2 - 2.1.png",
-    featuredImage: "assets/images/dashboard1.png",
-    body: [
-      "The capstone pushed me to think beyond textbook examples and into the realities of messy, incomplete data.",
-      "A lot of the challenge came from making thoughtful decisions under uncertainty, especially when stakeholders needed something useful quickly.",
-      "The biggest lesson was that the analysis matters most when it helps someone act with confidence."
-    ],
-    images: [
-      { src: "assets/images/dashboard1.png", alt: "Dashboard screenshot", caption: "The dashboard layout used to summarize movement patterns and key trends." },
-      { src: "assets/images/dashboard2.png", alt: "Dashboard detail view", caption: "A closer look at the filters and metrics used during the analysis process." }
+    featuredImage: "assets/images/c2 - 2.1.png",
+    body: [],
+    sections: [
+      { heading: "Where it all began", text: "Our seven-month capstone began with a deceptively simple question: how can historical data help people understand foot traffic? The answer required us to work through the less glamorous parts first, including raw files, inconsistent fields, and unclear assumptions.", images: [{ src: "assets/images/c2 -1.png", alt: "C2 Design Challenge team", caption: "Our team presenting our initial direction during the Catalyst Collider Design Challenge." }] },
+      { heading: "Turning data into a direction", text: "We turned the problem into a repeatable workflow. We cleaned and explored the dataset, identified useful variables, and tested ways to make patterns visible without asking the audience to read a spreadsheet. Each round of feedback forced us to explain not only what the numbers said, but why they mattered.", images: [{ src: "assets/images/c2 - 2.png", alt: "Foot-traffic dashboard presentation", caption: "Sharing the proposed solution and progress with an audience." }] },
+      { heading: "Building through feedback", text: "The project also taught us that presenting is part of building. We had to listen, defend our choices, and adjust the dashboard while the idea was still taking shape. The final concept was stronger because it had been challenged by people outside our team.", images: [{ src: "assets/images/c2 - 3.png", alt: "Team discussing the dashboard", caption: "A feedback session helped us refine the product and its story." }, { src: "assets/images/c2 - 4.png", alt: "Foot-traffic dashboard demonstration", caption: "Demonstrating the dashboard and its intended use case." }] },
+      { heading: "What we learned", text: "After seven months, the biggest takeaway was not a single chart or feature. It was learning how to move from messy evidence to a useful decision-making tool, together, through many small revisions.", images: [{ src: "assets/images/c2 - 5.png", alt: "Final C2 presentation", caption: "Presenting the final direction: a hindrance to urban efficiency." }] }
     ]
   },
   {
     id: "j2",
     date: "January 2026",
     tag: "Competition",
-    title: "My first hackathon: how we built a mobile-based AI-companion in 24hrs",
-    excerpt: "Our team had 30 hours to turn a messy public dataset into a working dashboard. Here's how we split the work.",
-    coverImage: "assets/images/watch1.png",
-    featuredImage: "assets/images/watch2.png",
-    body: [
-      "The experience taught me how much clarity comes from defining a narrow problem statement early.",
-      "We focused on building something simple, useful, and explainable instead of chasing every possible feature.",
-      "What stayed with me most was how fast a small team can move when priorities are shared clearly."
-    ],
-    images: [
-      { src: "assets/images/watch1.png", alt: "Hackathon concept board", caption: "An early concept board used to align the interface and user flow." },
-      { src: "assets/images/watch2.png", alt: "Prototype screenshot", caption: "The final prototype layout after several rounds of rapid iteration." }
+    title: "My first hackathon: How we built a mobile-based AI-companion in under 24 hrs",
+    excerpt: "Our first hackathon compressed research, product decisions, and prototyping into one intense day.",
+    coverImage: "assets/images/pt - cover.png",
+    featuredImage: "assets/images/pt - cover.png",
+    body: [],
+    sections: [
+      { heading: "Assembling the Team", text: "Some of the best learning doesn't happen in a classroom - it happens in a room full of whiteboards, cold coffee, and a deadline ticking down. That's exactly what the Philtech Innovathon for Universities was for me and my team. On January 22, 2025, together with my hackathon mates, Aljen Carmona, Josephus Romero, Samuel Sarmiento, and Noah Catungan, we first assembled at school, since this was our designated pick-up location. There's a particular kind of excitement in that moment before a hackathon starts - you don't know exactly what's ahead, but you know it's going to be a long, intense couple of days.", images: [{ src: "assets/images/pt - cover.png", alt: "PhilTech hackathon cover", caption: "The PhilTech Innovathon for Universities." }] },
+      { heading: "The Challenge: Mental Health and Wellness", text: "Once we arrived, Philtech introduced the company, walked us through the mechanics, and had us draw lots to determine our presentation order. Then came the topic we'd be tackling: personal productivity and wellness. The prompt was blunt and important - \"Mental health concerns have become evident with the youth. What breakthroughs can be introduced to assist and provide appropriate intervention?\" This was where we spent the bulk of our time. With a question that big, the ideas came fast and kept overflowing - almost too many possible directions to choose from. Narrowing it down to one solid concept took real discussion and some hard calls.", images: [{ src: "assets/images/watch1.png", alt: "Mental health AI companion concept", caption: "Exploring the challenge and shaping a focused solution." }] },
+      { heading: "Locking In: Development Phase", text: "Once we settled on what app or prototype to build, along with its core features, we split up to work on our individual roles. I was tasked with the front end together with Samuel, and together we designed the UI of the prototype. This was the \"lock-in\" period - heads down, screens glowing, everyone quietly grinding through their part of the build.", images: [{ src: "assets/images/watch2.png", alt: "AI companion prototype", caption: "The mobile-based AI companion prototype taking shape." }] },
+      { heading: "Fuel for the Grind", text: "Food and coffee!! I was honestly surprised by how well-fed we were. There wasn't a single moment during the entire competition where we went hungry - which, if you've ever been through a hackathon, you know makes a bigger difference than people expect.", images: [{ src: "assets/images/pt - cover.png", alt: "PhilTech hackathon team", caption: "The long build was powered by teamwork, food, and coffee." }] },
+      { heading: "Pitch Day", text: "January 23, 2026 - Pitching time! This part was nerve-wracking, since we were the first school to present our project in front of Philtech's general manager, Trung Nguyen, and other department heads. Presenting a project centered on mental health to that kind of audience raised the stakes, but it also reminded us why the work mattered in the first place.", images: [{ src: "assets/images/watch2.png", alt: "Hackathon project presentation", caption: "Presenting our project to the Philtech panel." }, { src: "assets/images/watch1.png", alt: "Hackathon team", caption: "The team during the Innovathon." }] },
+      { heading: "And That's a Wrap", text: "This was a genuinely great experience for me. I'd like to give a huge thanks to our mentors, Ms. Nila Santiago and Ms. Paula Mendoza, for their all-out support throughout the event. They shared their personal experiences from joining hackathons themselves, which gave us much better direction on what to focus on. I'd also like to thank Philtech for the opportunity - they were incredibly accommodating and even provided a workshop before the event that helped prepare us going in. Walking away from this, I didn't just come out with a working prototype. I came out with a better sense of how to turn a broad, difficult problem into something buildable in a short amount of time, and how much a supportive team and good mentorship can make that process feel less overwhelming. Photos in this post with the Philtech watermark are courtesy of Philtech and their official Facebook page." }
     ]
   },
   {
@@ -202,15 +200,17 @@ const BLOG = [
     date: "January - April 2026",
     tag: "OJT",
     title: "My 500-hour OJT experience at Ateneo Innovation Center",
-    excerpt: "My cybersecurity capstone pushed me into machine learning for the first time — awkwardly, at first.",
-    coverImage: "assets/images/placeholder-project.svg",
-    body: [
-      "The OJT experience helped me connect academic concepts with real research and communication challenges.",
-      "I learned that good analysis is as much about context and storytelling as it is about the model or query.",
-      "That balance made me more interested in turning data into something people can actually use."
-    ],
-    images: [
-      { src: "assets/images/placeholder-project.svg", alt: "Placeholder visual", caption: "A simple visual placeholder for the write-up until a final photo is added." }
+    excerpt: "Five hundred hours at the Ateneo Innovation Center taught me how research becomes useful when it is shared well.",
+    coverImage: "assets/images/ojt_cover.png",
+    body: [],
+    sections: [
+      { heading: "First Week", text: "On-the-job training is supposed to bridge the gap between what you learn in school and what actually happens in the field. Looking back at my OJT, that's exactly what it did - except the range of things I got hands-on with was a lot wider than I expected. My first real hands-on experience was tinkering with a solar panel. I learned how a solar panel actually works and how it stores energy into a battery. One small but important lesson that stuck with me: keeping the panel clean matters more than it sounds, since even a layer of dust can affect how much light it's able to absorb.", images: [{ src: "assets/images/ojt_cover.png", alt: "Ateneo Innovation Center OJT", caption: "My OJT experience at the Ateneo Innovation Center." }] },
+      { heading: "Learning to Fly", text: "This was also my first time ever flying a drone. We had the privilege of learning basic droning skills from Sir Nico Lasaca, a remote piloted aircraft controller, who walked us through the do's and don'ts before flying. I used to think you could fly a drone anywhere as long as you had one - turns out that's not the case at all. Sir Nico taught us that there are only specific areas where flying is actually allowed. I was nervous going in, worried I might crash it into something, but I managed to get through it without incident and even landed the drone precisely on a rock. That small win felt like a big one.", images: [{ src: "assets/images/ateneo.png", alt: "Ateneo de Manila University seal", caption: "The Ateneo community where the OJT took place." }] },
+      { heading: "Eyes in the Sky: Weather Monitoring on the Rooftop", text: "We also set up a camera on the rooftop of the PLDT CTC building. This camera served as the 'eyes' of a model designed to predict whether it would rain and to classify the rain category based on cloud patterns. This project pushed me to learn a lot more about climate and meteorological data, and how that raw data can be turned into insights that genuinely help the community.", images: [{ src: "assets/images/ojt_cover.png", alt: "OJT weather monitoring project", caption: "Weather monitoring became one of the hands-on projects during the OJT." }] },
+      { heading: "Smart Greenhouse", text: "We worked on integrating different technologies into a greenhouse weather station, including a CCTV camera used for pest detection on plants - a good reminder of how much overlap there is between agriculture and tech once you start looking for it.", images: [{ src: "assets/images/ateneo.png", alt: "Ateneo Innovation Center", caption: "Technology, agriculture, and community-centered work came together during the OJT." }] },
+      { heading: "Aquaponics and a Lesson in Patience", text: "This part of the OJT wasn't just about technical skills. Building an aquaponics setup and learning how to take care of fish taught me something less tangible but just as valuable: patience, and the understanding that great things take time." },
+      { heading: "The Little Things: Food and Good Company", text: "Every time we rendered overtime, we'd get a treat from our supervisor, Sir Paul Cabacungan. I'd like to give my thanks to Sir Paul and the rest of the AIC team for the opportunity and everything I got to learn along the way." },
+      { heading: "Looking Back", text: "I'm genuinely glad we were able to help create something impactful and innovative in the relatively short time we were there. This OJT experience gave me more than technical exposure - it gave me a much broader view of how different fields, from renewable energy to aviation to agriculture, can come together to solve real problems." }
     ]
   }
 ];

@@ -343,6 +343,13 @@ img{ max-width: 100%; display:block; }
   font-family: var(--font-display); font-size: 18px; font-weight: 600; margin: 0 0 8px;
 }
 .blog-card__excerpt{ color: var(--text-muted); font-size: 14.5px; margin:0; }
+.blog-section{ margin-top: 28px; }
+.blog-section__heading{ margin: 0 0 10px; color: var(--text); font-size: 19px; line-height: 1.35; }
+.blog-section__images{ display:grid; gap:16px; margin-top:16px; }
+.blog-section__images--1{ grid-template-columns: 1fr; }
+.blog-section__images--2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.blog-section__images--3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.blog-section__images .modal__gallery-item{ margin:0; }
 
 /* =========================================================
    GRIDS / CARDS (projects, certs)
@@ -565,6 +572,8 @@ img{ max-width: 100%; display:block; }
 }
 
 @media (max-width: 640px){
+  .blog-section__images--2,
+  .blog-section__images--3{ grid-template-columns: 1fr; }
   .nav__links{
     position: absolute; top: var(--nav-h); left:0; right:0;
     background: var(--bg); border-bottom: 1px solid var(--border);
