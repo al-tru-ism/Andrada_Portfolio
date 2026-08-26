@@ -28,13 +28,12 @@
     if(entry){
       list.classList.add("is-detail");
       const gallery = (entry.images && entry.images.length ? entry.images : [{ src: entry.coverImage || "assets/images/placeholder-project.svg", alt: entry.title || "Blog image", caption: "Placeholder image — replace this with your article artwork or a real photo." }]);
-      const featuredImage = entry.featuredImage || entry.images?.[0]?.src || entry.coverImage || "assets/images/placeholder-project.svg";
+      const featuredImage = entry.coverImage || "assets/images/placeholder-project.svg";
       const galleryImages = gallery.filter(img => img.src !== featuredImage);
       const sections = entry.sections || (entry.body || []).map(paragraph => ({ text: paragraph }));
       const renderImages = images => images.map(img => `
         <figure class="modal__gallery-item">
           <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
-          ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
         </figure>
       `).join("");
       list.innerHTML = `
@@ -42,8 +41,7 @@
           <p class="modal__eyebrow">$ cat ./blog/${esc(entry.id)}.md</p>
           <h1 class="section__title">${esc(entry.title || "Untitled article")}</h1>
           <p class="modal__meta">${esc(entry.tag || "General")} · ${esc(entry.date || "Date TBD")}</p>
-          <img class="modal__image" src="${esc(featuredImage)}" alt="${esc(entry.title || "Blog image")}">
-          ${sections.map(section => `<section class="blog-section">${section.heading ? `<p class="blog-section__heading"><strong>${esc(section.heading)}</strong></p>` : ""}<div class="modal__body"><p>${esc(section.text)}</p></div>${section.images?.length ? `<div class="blog-section__images blog-section__images--${Math.min(section.images.length, 3)}">${renderImages(section.images)}</div>` : ""}</section>`).join("")}
+          ${sections.map(section => { const sectionImages = section.images || []; return `<section class="blog-section">${section.heading ? `<p class="blog-section__heading"><strong>${esc(section.heading)}</strong></p>` : ""}${sectionImages.length ? `<div class="blog-section__images blog-section__images--${Math.min(sectionImages.length, 3)}">${renderImages(sectionImages)}</div>` : ""}<div class="modal__body"><p>${esc(section.text)}</p></div></section>`; }).join("")}
           ${!entry.sections ? renderImages(galleryImages) : ""}
           <p style="margin-top: 24px;"><a class="modal__link" href="blog.html">$ back to blog →</a></p>
         </article>
