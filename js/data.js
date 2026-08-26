@@ -4,51 +4,49 @@ const PROJECTS = [
     title: "FootTech: A Computer Vision-Based Foot Traffic Analytics for Real-Time Resource Optimization in Manila City using YOLOv10",
     status: "done", // "done" | "progress"
     video: "assets/images/capstone demo.mp4",
-    image: "assets/images/dashboard1.png",
-    featuredImage: "assets/images/dashboard2.png",
-    images: [
-      { src: "assets/images/dashboard1.png", alt: "Dashboard overview", caption: "Overview of the dashboard used in the project." },
-      { src: "assets/images/dashboard2.png", alt: "Dashboard filters", caption: "Detail view of filters and metrics." }
-    ],
-    summary: "An interactive dashboard summarizing foot-traffic patterns and peak load times.",
+    image: "assets/images/ojt_1.png",
+    featuredImage: "assets/images/ojt_2.png",
+    
+    summary: "A computer-vision system that turns CCTV and livestream footage into real-time foot traffic counts, dwell-time analytics, and heatmaps for local government urban planning and public safety use.",
     tags: ["SQL", "Power BI", "DAX"],
-    problem: "Make foot-traffic data actionable for venue resource planning: when and where to allocate staff and resources.",
+    problem: "Barangays and LGUs track foot traffic manually or not at all, making it hard to plan resource allocation, identify congestion points, or forecast high-traffic periods for public safety and commerce planning.",
     approach: [
-      "Ingested and cleaned sensor and camera-derived counts using a reproducible ETL pipeline.",
-      "Built aggregation layer and measures in Power BI; used DAX for time-windowed metrics.",
-      "Packaged actionable dashboards with filters and alerts for operational teams."
+      "Built a video analysis pipeline (sample clips, uploaded video, live YouTube streams) that detects and counts people frame-by-frame with dwell-time tracking.",
+      "Designed a dashboard with heatmaps, peak-hour detection, path-efficiency summaries, and weekly/monthly traffic breakdowns across multiple locations.",
+      "Generated barangay-level reports with population context, traffic categorization (High/Medium), and short-term forecast interpretation.",
+      "Implemented role-based sign-in/sign-up and a calendar module for scheduling monitoring tasks."
     ],
-    outcome: "Reduced manual monitoring effort; dashboard used in demos to inform staffing decisions during events.",
-    link: "https://github.com/yourname/sales-dashboard"
+    outcome: "A system that processes both stored and live video sources, producing actionable traffic reports and forecasts an LGU admin can use for planning without manual counting.",
+    link: "https://github.com/al-tru-ism/Foot_Tech.git"
   },
   {
     id: "p2",
     title: "WATCH: An AI-Driven Multimodal Acoustic-Vision Sensing Framework for Hyper-Local Extreme Rainfall Classification and Early Warning",
-    status: "done",
+    status: "In Progress",
     image: "assets/images/watch_cover.png",
     featuredImage: "assets/images/watch2.png",
     images: [
       { src: "assets/images/watch1.png", alt: "Prototype setup", caption: "Prototype used for data collection and demo." },
       { src: "assets/images/watch2.png", alt: "Prototype screenshot", caption: "Prototype UI and results." }
     ],
-    summary: "A multimodal sensing prototype combining acoustic and vision inputs to detect extreme rainfall events.",
+    summary: "A multimodal sensing prototype combining a modified weather station with acoustic and vision inputs to classify rainfall intensity and issue localized early warnings.",
     tags: ["Python", "Scikit-learn", "Sensors"],
-    problem: "Provide localized early-warning signals for extreme rainfall using low-cost sensors.",
+    problem: "Standard weather forecasts are too coarse for hyper-local extreme rainfall events; low-cost, site-specific sensing is needed to give communities earlier and more precise warnings.",
     approach: [
-      "Collected synchronized acoustic and camera data; engineered time-window features.",
-      "Trained and evaluated several classifiers; selected model balancing recall and latency.",
-      "Validated in field demos and iterated on sensor thresholds."
+      "Modified a consumer (TUYA) weather station with added sensors to capture synchronized wind, rainfall, and environmental readings.",
+      "Preprocessed data from different sources, especially the 10 years of historical meteorological data from VisualCrossing — cleaning missing values, dropping unneeded parameters, and using Python scripts with normalization to fill gaps.",
+      "Categorized precipitation data into No Rain, Light, Moderate, Heavy, and Torrential classes using spreadsheet formulas (avg, sum, custom baselines) to build training-ready datasets.",
+      "Trained and validated a classification model on the processed dataset, iterating on features tied to rainfall severity."
     ],
-    outcome: "Prototype achieved useful early warnings in pilot tests; informed next steps for deployment.",
-    link: "https://github.com/yourname/nid-classifier"
+    outcome: "A working prototype validated from existing articles, with the research submitted and accepted for co-authorship at an international journal (JJCIT), and hands-on experience preprocessing large real-world datasets."
   },
   {
     id: "p3",
     title: "AI-Enhanced Circular Sanitation: A Smart Nature-Based System for Transforming Septic Effluent into High-Value Ornamental Aquaponics",
-    status: "progress",
+    status: "In Progress",
     image: "assets/images/placeholder-project.svg",
     images: [ { src: "assets/images/placeholder-project.svg", alt: "placeholder", caption: "Placeholder image — replace with project photos." } ],
-    summary: "Work-in-progress on integrating biological treatment with monitoring and control.",
+    summary: "An IoT sensor system that monitors NPK (nitrogen, phosphorus, potassium), temperature, moisture, electrical conductivity, and pH for aquaponics growers, with a simplified interface built for non-technical farmers.",
     tags: ["Python", "Pandas", "Scikit-learn"],
     problem: "Design a closed-loop system to recover resources from septic effluent while ensuring safety.",
     approach: [
@@ -61,18 +59,20 @@ const PROJECTS = [
   },
   {
     id: "p4",
-    title: "Design and Implementation of a Library Management System Using Oracle Forms Developer",
+    title: "Ratas Poderosas Library Management System: Oracle Forms-Based LMS with Advanced Reporting",
     status: "done",
     image: "assets/images/placeholder-project.svg",
-    summary: "A review of a partner company's data-handling practices during OJT, mapping gaps against basic data-privacy principles.",
-    tags: ["Data Privacy", "Risk Assessment", "Documentation"],
-    problem: "Audit a partner system's data handling and align practices with baseline privacy controls.",
+    summary: "An academic system-development project for IT 003 - Advanced Database Systems, built in Oracle Forms Developer with user and book management, borrow-return workflows, and advanced Oracle Reports.",
+    tags: ["Oracle Forms Developer", "Oracle Reports Builder", "SQL/PLSQL", "Database Design"],
+    problem: "Manual library record-keeping leads to lost records, overdue-tracking errors, and no reliable way to check book availability or borrowing history.",
     approach: [
-      "Interviews, system review, and documentation analysis.",
-      "Mapped findings to a simple control checklist and prioritized recommendations.",
-      "Compiled a report and presented actionable steps to the supervisor."
+      "Designed the ERD and relational schema for Users, Books, Borrowed, and Return tables with proper primary and foreign key relationships.",
+      "Built login and signup, user maintenance, and book maintenance forms with full CRUD support and role-based admin and user access.",
+      "Implemented borrow and return workflows with automated overdue penalty calculation, a 3-day return policy, and a 1-book borrowing limit.",
+      "Produced nine Oracle Reports Builder formats, including tabular, grouped, matrix, mailing label, bookmark, conditional formatting, formula, and header/trailer reports.",
+      "Connected a generated report to a Forms Builder module through a smart trigger so reports could launch directly from the application UI."
     ],
-    outcome: "Recommendations documented; some process changes adopted by the partner during handover.",
+    outcome: "A functioning end-to-end LMS with secure role-based access, automated overdue tracking, and custom Oracle report formats demonstrating advanced reporting and PL/SQL scripting skills.",
     link: ""
   }
 ];
