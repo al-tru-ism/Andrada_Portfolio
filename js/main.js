@@ -78,33 +78,34 @@
     if(project){
       list.classList.add("is-detail");
       const images = (project.images && project.images.length) ? project.images : [{ src: project.image || "assets/images/placeholder-project.svg", alt: project.title || "Project image", caption: "Placeholder image — replace with your own project photo or screenshot." }];
-      const featuredImage = project.featuredImage || images[0]?.src || project.image || "assets/images/placeholder-project.svg";
-      const galleryImages = images.filter(img => img.src !== featuredImage);
-      const media = project.video ? `<video class="modal__video" controls src="${esc(project.video)}"></video>` : `
-        <img class="modal__image" src="${esc(featuredImage)}" alt="${esc(project.title || "Project image")}" loading="eager">
+      const galleryImages = project.images && project.images.length ? project.images : [];
+      const media = `
+           ${project.video ? `<video class="modal__video" controls src="${esc(project.video)}"></video>` : `<div class="project__gallery">
         ${galleryImages.map(img => `
-          <figure class="modal__gallery-item" style="margin-top: 16px;">
+          <figure class="modal__gallery-item">
             <img class="modal__gallery-image" src="${esc(img.src)}" alt="${esc(img.alt || "")}" loading="lazy">
             ${img.caption ? `<figcaption class="modal__caption">${esc(img.caption)}</figcaption>` : ""}
           </figure>
         `).join("")}
+        </div>`}
       `;
 
       list.innerHTML = `
         <article class="detail-page">
           <p class="modal__eyebrow">$ cat ./projects/${esc(project.id)}.md</p>
           <h1 class="section__title">${esc(project.title || "Untitled project")}</h1>
-          <p class="modal__meta">${project.status === 'progress' ? 'Status: In progress' : 'Status: Done'}</p>
+          <p class="modal__meta">${String(project.status).toLowerCase() === 'progress' ? 'Status: In progress' : 'Status: Done'}</p>
           ${media}
           <p class="card__desc">${esc(project.summary || "Placeholder summary. Replace this with a project description.")}</p>
           <p class="modal__section-label">Problem</p>
           <div class="modal__body"><p>${esc(project.problem || "Placeholder problem statement. Replace with the real challenge this project addressed.")}</p></div>
-          <p class="modal__section-label">Approach</p>
-          <div class="modal__body"><ul>${(project.approach || ["Replace this item with the actual approach or workflow used in the project."]).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
+            <p class="modal__section-label">${project.contributions ? "Contributions" : "Approach"}</p>
+            <div class="modal__body"><ul>${(project.contributions || project.approach || ["Replace this item with the actual approach or workflow used in the project."]).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
           <p class="modal__section-label">Outcome</p>
           <div class="modal__body"><p>${esc(project.outcome || "Placeholder outcome. Add what this project achieved or what you learned from it.")}</p></div>
           <div class="modal__tags">${(project.tags || []).map(t => `<span>${esc(t)}</span>`).join("")}</div>
           ${project.link ? `<p style="margin-top: 20px;"><a class="modal__link" href="${esc(project.link)}" target="_blank" rel="noopener">$ open repository →</a></p>` : ""}
+          ${project.documentation ? `<p style="margin-top: 20px;"><a class="modal__link" href="${esc(project.documentation)}" target="_blank" rel="noopener">$ open documentation →</a></p>` : ""}
           <p style="margin-top: 24px;"><a class="modal__link" href="projects.html">$ back to projects →</a></p>
         </article>
       `;
@@ -119,8 +120,8 @@
           ${media}
           <div class="card__top">
             <h3 class="card__title">${esc(p.title || "Untitled project")}</h3>
-            <span class="card__status card__status--${p.status === 'progress' ? 'progress' : 'done'}">
-              ${p.status === 'progress' ? 'In progress' : 'Done'}
+            <span class="card__status card__status--${String(p.status).toLowerCase() === 'progress' ? 'progress' : 'done'}">
+              ${String(p.status).toLowerCase() === 'progress' ? 'In progress' : 'Done'}
             </span>
           </div>
           <p class="card__desc">${esc(p.summary || "Placeholder summary. Replace this with a project description.")}</p>
@@ -167,6 +168,21 @@
     `).join("");
   }
 
+  function renderEducation(){
+    const list = $("#educationList");
+    if(!list || typeof EDUCATION === "undefined") return;
+    list.innerHTML = EDUCATION.map(e => `
+      <div class="timeline__item">
+        ${e.logo ? `<img class="timeline__logo" src="${esc(e.logo)}" alt="${esc(e.org)} logo">` : ""}
+        <span class="timeline__dot"></span>
+        <p class="timeline__period">${esc(e.period)}</p>
+        <h3 class="timeline__role">${esc(e.degree)}</h3>
+        <p class="timeline__org">${esc(e.org)}</p>
+        ${e.points ? `<ul class="timeline__points">${e.points.map(point => `<li>${esc(point)}</li>`).join("")}</ul>` : ""}
+      </div>
+    `).join("");
+  }
+
   /* =========================================================
      MODAL (shared across pages that need it)
      ========================================================= */
@@ -191,19 +207,19 @@
 
   function projectModalHTML(p){
     const images = (p.images && p.images.length) ? p.images : [{ src: p.image || "assets/images/placeholder-project.svg", alt: p.title || "Project image", caption: "Placeholder image — replace with your own project photo or screenshot." }];
-    const featuredImage = p.featuredImage || images[0]?.src || p.image || "assets/images/placeholder-project.svg";
+    const featuredImage = p.featuredImage || p.image || images[0]?.src || "assets/images/placeholder-project.svg";
     const media = p.video ? `<video class="modal__video" controls src="${esc(p.video)}"></video>` : galleryHTML(images, featuredImage);
     return `
       ${media}
       <p class="modal__eyebrow">$ cat ./projects/${esc(p.id)}.md</p>
       <h2 class="modal__title">${esc(p.title || "Untitled project")}</h2>
-      <p class="modal__meta">${p.status === 'progress' ? 'Status: In progress' : 'Status: Done'}</p>
+      <p class="modal__meta">${String(p.status).toLowerCase() === 'progress' ? 'Status: In progress' : 'Status: Done'}</p>
 
       <p class="modal__section-label">Problem</p>
       <div class="modal__body"><p>${esc(p.problem || "Placeholder problem statement. Replace with the real challenge this project addressed.")}</p></div>
 
-      <p class="modal__section-label">Approach</p>
-      <div class="modal__body"><ul>${(p.approach||["Replace this item with the actual approach or workflow used in the project."]).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
+      <p class="modal__section-label">${p.contributions ? "Contributions" : "Approach"}</p>
+      <div class="modal__body"><ul>${(p.contributions || p.approach || ["Replace this item with the actual approach or workflow used in the project."]).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
 
       <p class="modal__section-label">Outcome</p>
       <div class="modal__body"><p>${esc(p.outcome || "Placeholder outcome. Add what this project achieved or what you learned from it.")}</p></div>
@@ -302,4 +318,5 @@
   renderProjects();
   renderCerts();
   renderExperience();
+  renderEducation();
 })();
